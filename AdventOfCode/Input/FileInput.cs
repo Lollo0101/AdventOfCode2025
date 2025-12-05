@@ -8,7 +8,7 @@ public class FileInput : IInput
 
         try
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "DayOne", "input.txt");
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "DayOne", "Input", "input.txt");
 
             var sr = new StreamReader(path);
             var line = sr.ReadLine();

@@ -1,5 +1,4 @@
 ﻿// See https://aka.ms/new-console-template for more information
-// ownerproof-5455086-1764929468-926772fff74c
 
 using AdventOfCode.DayOne;
 using AdventOfCode.DayTwo;

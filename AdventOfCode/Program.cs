@@ -1,11 +1,13 @@
 ﻿// See https://aka.ms/new-console-template for more information
+// ownerproof-5455086-1764929468-926772fff74c
 
 using AdventOfCode.DayOne;
+using AdventOfCode.DayTwo;
 using AdventOfCode.Input;
 using Microsoft.Extensions.DependencyInjection;
 
 var main = new Main();
-main.DayOne();
+main.DayTwo();
 
 internal class Main
 {
@@ -22,9 +24,17 @@ internal class Main
 
     public void DayOne()
     {
-        var input = _serviceProvider.GetService<IInput>()!.ReadListInput();
+        var input = _serviceProvider.GetService<IInput>()!.ReadDayOneInput();
 
         var dayOne = new DayOne(input);
+        dayOne.Run();
+    }
+
+    public void DayTwo()
+    {
+        var input = _serviceProvider.GetService<IInput>()!.ReadDayTwoInput();
+
+        var dayOne = new DayTwo(input);
         dayOne.Run();
     }
 }

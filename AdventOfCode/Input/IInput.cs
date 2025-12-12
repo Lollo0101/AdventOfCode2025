@@ -2,5 +2,6 @@
 
 public interface IInput
 {
-    List<string> ReadListInput();
+    List<string> ReadDayOneInput();
+    List<string> ReadDayTwoInput();
 }

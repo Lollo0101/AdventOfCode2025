@@ -1,12 +1,13 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using AdventOfCode.DayOne;
+using AdventOfCode.DayThree;
 using AdventOfCode.DayTwo;
 using AdventOfCode.Input;
 using Microsoft.Extensions.DependencyInjection;
 
 var main = new Main();
-main.DayTwo();
+main.DayThree();
 
 internal class Main
 {
@@ -33,7 +34,15 @@ internal class Main
     {
         var input = _serviceProvider.GetService<IInput>()!.ReadDayTwoInput();
 
-        var dayOne = new DayTwo(input);
-        dayOne.Run();
+        var dayTwo = new DayTwo(input);
+        dayTwo.Run();
+    }
+
+    public void DayThree()
+    {
+        var input = _serviceProvider.GetService<IInput>()!.ReadDayThreeInput();
+
+        var dayThree = new DayThree(input);
+        dayThree.Run();
     }
 }

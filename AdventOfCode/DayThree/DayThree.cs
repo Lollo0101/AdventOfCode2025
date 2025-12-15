@@ -17,11 +17,12 @@ public class DayThree
     public void Run()
     {
         var escalator = new Escalator();
-        var totalMaxJoltage = 0;
+        long totalMaxJoltage = 0;
 
         foreach (var bank in _banks)
         {
-            totalMaxJoltage += escalator.GetMaxJoltage(bank);
+            var bankJoltage = escalator.GetMaxJoltage(bank);
+            totalMaxJoltage += long.Parse(bankJoltage);
         }
 
         Console.WriteLine(totalMaxJoltage);

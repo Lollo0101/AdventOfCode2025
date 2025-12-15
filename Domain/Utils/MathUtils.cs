@@ -5,21 +5,22 @@ public class MathUtils
     public static int Mod(int value, int module)
         => (value % module + module) % module;
 
-    public static int IntPow(int x, int pow)
+    public static int FindMaxIndexInSubArray(List<int> list, int start, int end)
     {
-        var ret = 1;
+        var currentMax = 0;
+        var currentMaxIndex = start;
 
-        while (pow != 0)
+        for (var i = start; i < start + end; i++)
         {
-            if ((pow & 1) == 1)
+            if (currentMax >= list[i])
             {
-                ret *= x;
+                continue;
             }
 
-            x *= x;
-            pow >>= 1;
+            currentMax = list[i];
+            currentMaxIndex = i;
         }
 
-        return ret;
+        return currentMaxIndex;
     }
 }

@@ -2,5 +2,5 @@
 
 public class Battery
 {
-    public int Joltage { get; set; }
+    public required string Joltage { get; set; }
 }

@@ -19,7 +19,7 @@ public class Escalator
     }
 
     public string GetMaxJoltage(Bank bank)
-        => GetMaxJoltageWithTwoBatteries(bank);
+        => GetMaxJoltageWithTwelveBatteries(bank);
 
     [Obsolete("Method deprecated. Please use GetMaxJoltageWithXBatteries instead.")]
     private static string GetMaxJoltageWithTwoBatteries(Bank bank)
@@ -31,5 +31,39 @@ public class Escalator
 
         var units = bank.Batteries.GetRange(maxTensIndex + 1, batteriesCount - maxTensIndex - 1).Max(b => b.Joltage);
         return tens + units;
+    }
+
+    private static string GetMaxJoltageWithTwelveBatteries(Bank bank)
+        => GetMaxJoltageWithXBatteries(12, bank.Batteries);
+
+    private static string GetMaxJoltageWithXBatteries(int neededBatteries, List<Battery> batteries, int index = 0)
+    {
+        var batteriesCount = batteries.Count;
+
+        if (neededBatteries == 0 || index >= batteriesCount)
+        {
+            return "";
+        }
+
+        if (batteriesCount - index < neededBatteries)
+        {
+            throw new Exception("Something went wrong");
+        }
+
+        if (neededBatteries != batteriesCount - index)
+        {
+            var maxIndex = MathUtils.FindMaxIndexInSubArray(batteries.Select(b => int.Parse(b.Joltage)).ToList(), index, batteriesCount - index - (neededBatteries - 1));
+            var maxJoltage = batteries[maxIndex];
+            return maxJoltage + GetMaxJoltageWithXBatteries(neededBatteries - 1, batteries, maxIndex + 1);
+        }
+
+        var remainingBatteriesTotalVoltage = "";
+
+        for (var i = 0; i < neededBatteries; i++)
+        {
+            remainingBatteriesTotalVoltage += batteries[index + i].Joltage;
+        }
+
+        return remainingBatteriesTotalVoltage;
     }
 }

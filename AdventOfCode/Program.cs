@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using AdventOfCode.DayFour;
 using AdventOfCode.DayOne;
 using AdventOfCode.DayThree;
 using AdventOfCode.DayTwo;
@@ -44,5 +45,13 @@ internal class Main
 
         var dayThree = new DayThree(input);
         dayThree.Run();
+    }
+
+    public void DayFour()
+    {
+        var input = _serviceProvider.GetService<IInput>()!.ReadDayFourInput();
+
+        var dayFour = new DayFour(input);
+        dayFour.Run();
     }
 }

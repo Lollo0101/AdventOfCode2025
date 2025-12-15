@@ -91,4 +91,7 @@ public class FileInput : IInput
 
         return input;
     }
+
+    public List<string> ReadDayFourInput()
+        => throw new NotImplementedException();
 }

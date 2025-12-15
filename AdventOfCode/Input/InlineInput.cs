@@ -41,4 +41,7 @@ public class InlineInput : IInput
             "234234234234278",
             "818181911112111",
         ];
+
+    public List<string> ReadDayFourInput()
+        => throw new NotImplementedException();
 }

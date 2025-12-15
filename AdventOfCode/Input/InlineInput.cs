@@ -43,5 +43,17 @@ public class InlineInput : IInput
         ];
 
     public List<string> ReadDayFourInput()
-        => throw new NotImplementedException();
+        =>
+        [
+            "..@@.@@@@.",
+            "@@@.@.@.@@",
+            "@@@@@.@.@@",
+            "@.@@@@..@.",
+            "@@.@@@@.@@",
+            ".@@@@@@@.@",
+            ".@.@.@.@@@",
+            "@.@@@.@@@@",
+            ".@@@@@@@@.",
+            "@.@.@@@.@.",
+        ];
 }

@@ -1,4 +1,6 @@
-﻿namespace AdventOfCode.DayThree.Entities;
+﻿using Domain.Utils;
+
+namespace AdventOfCode.DayThree.Entities;
 
 public class Escalator
 {
@@ -17,7 +19,7 @@ public class Escalator
     }
 
     public string GetMaxJoltage(Bank bank)
-        => GetMaxJoltageWithTwelveBatteries(bank);
+        => GetMaxJoltageWithTwoBatteries(bank);
 
     [Obsolete("Method deprecated. Please use GetMaxJoltageWithXBatteries instead.")]
     private static string GetMaxJoltageWithTwoBatteries(Bank bank)

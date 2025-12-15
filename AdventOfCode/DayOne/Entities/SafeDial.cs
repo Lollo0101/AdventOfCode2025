@@ -1,4 +1,4 @@
-﻿using AdventOfCode.Utils;
+﻿using Domain.Utils;
 
 namespace AdventOfCode.DayOne.Entities;
 

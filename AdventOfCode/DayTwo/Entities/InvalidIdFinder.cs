@@ -98,7 +98,7 @@ public class InvalidIdFinder
             }
         }
 
-        return idLength % 2 == 1;
+        return (idLength & 1) == 1;
     }
 
     private static bool IsDivider(int subStrLength, int idLength)

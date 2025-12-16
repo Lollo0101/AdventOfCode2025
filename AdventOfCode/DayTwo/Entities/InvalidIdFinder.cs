@@ -27,7 +27,7 @@ public class InvalidIdFinder
     private static bool IsInvalidId(string id)
         => IsAnyRepeatedSequenceId(id);
 
-    [Obsolete("Method deprecated. Please use IsAnyRepeatedSequenceId instead")]
+    [Obsolete("Method deprecated. Please use IsAnyRepeatedSequenceId instead.")]
     private static bool IsTwiceSequenceId(string id)
         => id[..(id.Length / 2)].Equals(id[(id.Length / 2)..]);
 

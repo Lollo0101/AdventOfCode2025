@@ -8,7 +8,7 @@ using AdventOfCode.Input;
 using Microsoft.Extensions.DependencyInjection;
 
 var main = new Main();
-main.DayThree();
+main.DayFour();
 
 internal class Main
 {

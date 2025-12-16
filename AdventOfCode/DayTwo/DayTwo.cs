@@ -1,8 +1,9 @@
 ﻿using AdventOfCode.DayTwo.Entities;
+using Domain.Base;
 
 namespace AdventOfCode.DayTwo;
 
-public class DayTwo
+public class DayTwo : IDay
 {
     private readonly List<IdsRange> _ranges = [];
 

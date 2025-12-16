@@ -1,8 +1,9 @@
 ﻿using AdventOfCode.DayFour.Entities;
+using Domain.Base;
 
 namespace AdventOfCode.DayFour;
 
-public class DayFour
+public class DayFour : IDay
 {
     private readonly Rack _rack;
 

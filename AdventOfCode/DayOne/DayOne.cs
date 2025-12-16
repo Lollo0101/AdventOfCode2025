@@ -1,8 +1,9 @@
 ﻿using AdventOfCode.DayOne.Entities;
+using Domain.Base;
 
 namespace AdventOfCode.DayOne;
 
-public class DayOne
+public class DayOne : IDay
 {
     private readonly List<SafeDialParams> _safeDialParams = [];
 

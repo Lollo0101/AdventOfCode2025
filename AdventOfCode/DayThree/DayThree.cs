@@ -1,8 +1,9 @@
 ﻿using AdventOfCode.DayThree.Entities;
+using Domain.Base;
 
 namespace AdventOfCode.DayThree;
 
-public class DayThree
+public class DayThree : IDay
 {
     private readonly List<Bank> _banks = [];
 

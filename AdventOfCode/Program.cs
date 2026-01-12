@@ -3,13 +3,14 @@
 using AdventOfCode.DayFive;
 using AdventOfCode.DayFour;
 using AdventOfCode.DayOne;
+using AdventOfCode.DaySix;
 using AdventOfCode.DayThree;
 using AdventOfCode.DayTwo;
 using AdventOfCode.Input;
 using Microsoft.Extensions.DependencyInjection;
 
 var main = new Main();
-main.DayFive();
+main.DaySix();
 
 internal class Main
 {
@@ -18,8 +19,8 @@ internal class Main
     public Main()
     {
         var serviceCollection = new ServiceCollection();
-        // serviceCollection.AddSingleton<IInput, InlineInput>();
-        serviceCollection.AddSingleton<IInput, FileInput>();
+        serviceCollection.AddSingleton<IInput, InlineInput>();
+        // serviceCollection.AddSingleton<IInput, FileInput>();
 
         _serviceProvider = serviceCollection.BuildServiceProvider();
     }
@@ -62,5 +63,13 @@ internal class Main
 
         var dayFive = new DayFive(input);
         dayFive.Run();
+    }
+
+    public void DaySix()
+    {
+        var input = _serviceProvider.GetService<IInput>()!.ReadDaySixInput();
+
+        var daySix = new DaySix(input);
+        daySix.Run();
     }
 }

@@ -7,4 +7,5 @@ public interface IInput
     List<string> ReadDayThreeInput();
     List<string> ReadDayFourInput();
     List<string> ReadDayFiveInput();
+    List<string> ReadDaySixInput();
 }

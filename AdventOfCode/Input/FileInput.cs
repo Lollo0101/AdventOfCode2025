@@ -147,4 +147,32 @@ public class FileInput : IInput
 
         return input;
     }
+
+    public List<string> ReadDaySixInput()
+    {
+        var input = new List<string>();
+
+        try
+        {
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "DaySix", "Input", "input.txt");
+
+            var sr = new StreamReader(path);
+            var line = sr.ReadLine();
+
+            while (line is not null)
+            {
+                input.Add(line);
+                line = sr.ReadLine();
+            }
+
+            sr.Close();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Exception: " + e.Message);
+            throw;
+        }
+
+        return input;
+    }
 }
